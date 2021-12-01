@@ -78,7 +78,7 @@ class ShowWave {
     function animateStart(startTime, circle, index) {
       //计算时间差
       let time = new Date().getTime() - startTime;
-      
+
       if (time < 0) {
         circle.setOptions({
           radius: 0,
@@ -131,13 +131,12 @@ class ShowWave {
 
     //重置覆盖物样式
     for (let circle of this.circles) {
-      circle.setRadius(0); //半径
-      circle.setFillOpacity(this.color.fillOpacity); //透明度
-      circle.getStrokeOpacity(this.color.fillOpacity); //透明度
+      circle.setOptions({
+        radius: 0,
+        strokeOpacity: this.color.fillOpacity,
+        fillOpacity: this.color.fillOpacity
+      });
     }
-
-    // this.clock=null;
-    //map.remove(this.Marker);
   }
   /**
    * 移除覆盖物.

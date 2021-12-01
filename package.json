@@ -1,6 +1,6 @@
 {
   "name": "amap-wave",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Amap water wave diffusion special effects",
   "main": "./dist/amap-wave.js",
   "scripts": {
