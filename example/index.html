@@ -1,0 +1,49 @@
+<!--
+ * @path        : \amap-wave\example\index.html
+ * @message     : 
+ * @Author      : yvangod
+-->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #container {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  <script type="text/javascript" src="../dist/amap-wave.js"></script>
+  <script>
+    window.onLoad = function () {
+      var map = new AMap.Map('container', {
+        zoom: 11,//级别
+        center: [116.397428, 39.90923],//中心点坐标
+        viewMode: '3D'//使用3D视图
+      });
+      // 实例化
+      var wave = new AMapWave(map, 5000, 3, map.getCenter(), {
+        fillColor: '#1fc315',
+        fillOpacity: 0.8
+      })
+      // 开始动画
+      wave.start(5000, 2500)
+    }
+
+    var url = 'https://webapi.amap.com/maps?v=1.4.15&key=efb40f4458958f212eff58d0ace1abf4&callback=onLoad';
+    var jsapi = document.createElement('script');
+    jsapi.charset = 'utf-8';
+    jsapi.src = url;
+    document.head.appendChild(jsapi);
+
+  </script>
+</body>
